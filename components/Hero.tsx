@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
-import HeroScene from "./HeroScene";
+import dynamic from "next/dynamic";
+
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 export default function Hero() {
   return (
@@ -99,3 +101,4 @@ export default function Hero() {
     </section>
   );
 }
+
